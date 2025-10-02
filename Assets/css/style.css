@@ -58,6 +58,12 @@ footer {
     bottom: 0;
 }
 
+/* main {
+    padding: 20px;
+    min-height: 80vh;
+} */
+
+
 h1, h2, h3 {
     color: var(--secondary-color);
 }
@@ -71,10 +77,8 @@ a:hover {
     text-decoration: underline;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+.container-fluid {
+    background-image: url('../images/v627-aew-01-technologybackground.webp');
 }
 
 .button-primary {
