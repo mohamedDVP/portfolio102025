@@ -63,7 +63,14 @@ footer {
     min-height: 80vh;
 } */
 
+h1{
+    text-align: center;
+}
 
+h1, p {
+    text-align: center;
+    color: var(--light-color);
+}
 h1, h2, h3 {
     color: var(--secondary-color);
 }
