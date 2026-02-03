@@ -13,11 +13,12 @@
 <body>
     <header>
         <nav>
+            <?php $page = basename($_SERVER['PHP_SELF']); ?>
             <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="about.php">À propos</a></li>
-                <li><a href="portfolio.php">Portfolio</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><a href="index.php" class="<?php echo ($page == 'index.php') ? 'active' : ''; ?>">Accueil</a></li>
+                <li><a href="about.php" class="<?php echo ($page == 'about.php') ? 'active' : ''; ?>">À propos</a></li>
+                <li><a href="portfolio.php" class="<?php echo ($page == 'portfolio.php') ? 'active' : ''; ?>">Portfolio</a></li>
+                <li><a href="contact.php" class="<?php echo ($page == 'contact.php') ? 'active' : ''; ?>">Contact</a></li>
             </ul>
         </nav>
     </header>
