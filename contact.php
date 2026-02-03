@@ -8,16 +8,24 @@
             <div class="col-md-6">
                 <?php
                 // Traitement du formulaire
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $nom = htmlspecialchars($_POST['nom']);
-                    $email = htmlspecialchars($_POST['email']);
-                    $message = htmlspecialchars($_POST['message']);
+                    require_once 'includes/db.php'; // On se connecte à la BDD
 
-                    // Ici, vous pourriez envoyer un email ou sauvegarder en base de données
-                    // Pour l'instant, on affiche juste une confirmation
-                    echo '<div class="alert alert-success">Merci ' . $nom . ', votre message a bien été reçu !</div>';
-                }
-                ?>
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        $nom = htmlspecialchars($_POST['nom']);
+                        $email = htmlspecialchars($_POST['email']);
+                        $message = htmlspecialchars($_POST['message']);
+                        
+                        try {
+                            $stmt = $pdo->prepare("INSERT INTO messages (nom, email, message) VALUES (:nom, :email, :message)");
+                            $stmt->execute([
+                                'nom' => $nom,
+                                'email' => $email,
+                                'message' => $message
+                            ]);
+                            echo '<div class="alert alert-success">Merci ' . $nom . ', votre message a bien été enregistré !</div>';
+                        } catch (PDOException $e) {
+                            echo '<div class="alert alert-danger">Erreur lors de l\'envoi : ' . $e->getMessage() . '</div>';
+                        }
 
                 <form action="contact.php" method="POST" class="card p-4">
                     <div class="mb-3">
