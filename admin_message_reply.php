@@ -25,7 +25,7 @@ if (!$msg) {
 // Traitement de l'envoi de la réponse
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $reponse_contenu = htmlspecialchars($_POST['reponse']);
-    
+
     if (!empty($reponse_contenu)) {
         // 1. Sauvegarder la réponse en BDD
         $stmt = $pdo->prepare("INSERT INTO reponses (message_id, contenu) VALUES (:msg_id, :contenu)");
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // 2. Simulation de l'envoi d'email
         // mail($msg['email'], "Réponse à votre message", $reponse_contenu);
-        
+
         $success = "Réponse enregistrée avec succès (Simulation d'email envoyée).";
     }
 }
@@ -52,7 +52,7 @@ $reponses = $stmt_rep->fetchAll(PDO::FETCH_ASSOC);
 
 <div class="container">
     <a href="admin_messages.php" class="btn btn-outline-secondary mb-3">&larr; Retour aux messages</a>
-    
+
     <div class="row">
         <div class="col-md-6">
             <div class="card p-4 mb-4">
@@ -69,8 +69,8 @@ $reponses = $stmt_rep->fetchAll(PDO::FETCH_ASSOC);
         <div class="col-md-6">
             <div class="card p-4">
                 <h3>Répondre</h3>
-                
-                <?php if(isset($success)): ?>
+
+                <?php if (isset($success)): ?>
                     <div class="alert alert-success"><?php echo $success; ?></div>
                 <?php endif; ?>
 
@@ -87,21 +87,21 @@ $reponses = $stmt_rep->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <!-- Historique des réponses -->
-    <?php if(count($reponses) > 0): ?>
-    <div class="row mt-4">
-        <div class="col-12">
-            <h4 class="mb-3">Historique de la conversation</h4>
-            <?php foreach($reponses as $rep): ?>
-                <div class="card p-3 mb-2 border-primary" style="margin-left: 50px;">
-                    <div class="d-flex justify-content-between">
-                        <strong>Admin (Vous)</strong>
-                        <small><?php echo $rep['date_reponse']; ?></small>
+    <?php if (count($reponses) > 0): ?>
+        <div class="row mt-4">
+            <div class="col-12">
+                <h4 class="mb-3">Historique de la conversation</h4>
+                <?php foreach ($reponses as $rep): ?>
+                    <div class="card p-3 mb-2 border-primary" style="margin-left: 50px;">
+                        <div class="d-flex justify-content-between">
+                            <strong>Admin (Vous)</strong>
+                            <small><?php echo $rep['date_reponse']; ?></small>
+                        </div>
+                        <p class="mt-2 mb-0"><?php echo nl2br(htmlspecialchars($rep['contenu'])); ?></p>
                     </div>
-                    <p class="mt-2 mb-0"><?php echo nl2br(htmlspecialchars($rep['contenu'])); ?></p>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            </div>
         </div>
-    </div>
     <?php endif; ?>
 
 </div>
