@@ -2,7 +2,7 @@
 <main>
     <div class="container-fluid">
         <h1>Contact</h1>
-        <p>N'hésitez pas à me laisser un message.</p>
+        <p class="text-center">N'hésitez pas à me laisser un message.</p>
 
         <div class="row justify-content-center">
             <div class="col-md-6">

@@ -3,7 +3,7 @@
 <main>
     <div class="container-fluid">
         <h1>Mon Portfolio</h1>
-        <p>Découvrez mes réalisations.</p>
+        <p class="text-center">Découvrez mes réalisations.</p>
 
         <div class="row">
             <?php foreach ($projets as $projet): ?>
