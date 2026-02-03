@@ -24,7 +24,7 @@ $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <?php include 'includes/admin_header.php'; ?>
 
-<div class="container">
+<main class="container py-4">
     <h2 class="mb-4">Messages reçus</h2>
 
     <?php if (isset($_GET['msg']) && $_GET['msg'] == 'deleted'): ?>
@@ -52,6 +52,6 @@ $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
-</div>
+</main>
 
 <?php include 'includes/footer.php'; ?>

@@ -50,7 +50,7 @@ $reponses = $stmt_rep->fetchAll(PDO::FETCH_ASSOC);
 
 <?php include 'includes/admin_header.php'; ?>
 
-<div class="container">
+<main class="container py-4">
     <a href="admin_messages.php" class="btn btn-outline-secondary mb-3">&larr; Retour aux messages</a>
 
     <div class="row">
@@ -88,14 +88,14 @@ $reponses = $stmt_rep->fetchAll(PDO::FETCH_ASSOC);
 
     <!-- Historique des réponses -->
     <?php if (count($reponses) > 0): ?>
-        <div class="row mt-4">
+        <div class="row mt-5 mb-5 pb-5">
             <div class="col-12">
                 <h4 class="mb-3">Historique de la conversation</h4>
                 <?php foreach ($reponses as $rep): ?>
-                    <div class="card p-3 mb-2 border-primary" style="margin-left: 50px;">
+                    <div class="p-3 mb-2 border rounded shadow-sm bg-white" style="margin-left: 50px;">
                         <div class="d-flex justify-content-between">
                             <strong>Admin (Vous)</strong>
-                            <small><?php echo $rep['date_reponse']; ?></small>
+                            <small class="text-muted"><?php echo $rep['date_reponse']; ?></small>
                         </div>
                         <p class="mt-2 mb-0"><?php echo nl2br(htmlspecialchars($rep['contenu'])); ?></p>
                     </div>
@@ -104,6 +104,6 @@ $reponses = $stmt_rep->fetchAll(PDO::FETCH_ASSOC);
         </div>
     <?php endif; ?>
 
-</div>
+</main>
 
 <?php include 'includes/footer.php'; ?>
