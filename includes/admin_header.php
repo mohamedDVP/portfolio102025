@@ -14,6 +14,9 @@
         <div class="container d-flex justify-content-between">
             <span class="navbar-brand mb-0 h1">Admin Panel</span>
             <div>
+                <a href="admin.php" class="btn btn-outline-light btn-sm me-2">Projets</a>
+                <a href="admin_messages.php" class="btn btn-outline-light btn-sm me-2">Messages</a>
+                <span class="text-white me-3">|</span>
                 <span class="text-white me-3">Bienvenue, <?php echo $_SESSION['username']; ?></span>
                 <a href="logout.php" class="btn btn-outline-light btn-sm">Déconnexion</a>
                 <a href="index.php" class="btn btn-light btn-sm ms-2" target="_blank">Voir le site</a>
