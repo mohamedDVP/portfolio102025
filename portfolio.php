@@ -5,7 +5,7 @@ $projets = [
     [
         "titre" => "Site E-commerce",
         "description" => "Un site de vente en ligne complet avec panier et paiement.",
-        "image" => "Assets/images/v627-aew-01-technologybackground.webp", 
+        "image" => "Assets/images/v627-aew-01-technologybackground.webp",
         "lien" => "#"
     ],
     [
@@ -26,9 +26,9 @@ $projets = [
     <div class="container-fluid">
         <h1>Mon Portfolio</h1>
         <p>Découvrez mes réalisations.</p>
-        
+
         <div class="row">
-            <?php foreach($projets as $projet): ?>
+            <?php foreach ($projets as $projet): ?>
                 <div class="col-md-4">
                     <div class="card" style="min-height: 400px;">
                         <img src="<?php echo $projet['image']; ?>" alt="<?php echo $projet['titre']; ?>" class="img-fluid mb-3" style="border-radius: 5px;">
