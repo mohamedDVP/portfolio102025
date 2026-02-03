@@ -3,7 +3,7 @@
 <main>
     <div class="container-fluid">
         <h1>À propos de moi</h1>
-        
+
         <div class="row justify-content-center mt-5">
             <div class="col-md-8">
                 <div class="card p-4">
@@ -17,7 +17,7 @@
                     <p>
                         Mon objectif est de créer des applications web performantes et utiles.
                     </p>
-                    
+
                     <h4 class="mt-4">Mes Compétences</h4>
                     <ul>
                         <li>HTML5 / CSS3</li>
