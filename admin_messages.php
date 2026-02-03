@@ -44,7 +44,7 @@ $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                         <p class="mt-2 mb-2"><?php echo nl2br(htmlspecialchars($msg['message'])); ?></p>
                         <div class="text-end">
-                            <a href="mailto:<?php echo htmlspecialchars($msg['email']); ?>" class="btn btn-primary btn-sm">Répondre</a>
+                            <a href="admin_message_reply.php?id=<?php echo $msg['id']; ?>" class="btn btn-primary btn-sm">Ouvrir & Répondre</a>
                             <a href="admin_messages.php?delete=<?php echo $msg['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Supprimer ce message ?');">Supprimer</a>
                         </div>
                     </div>
