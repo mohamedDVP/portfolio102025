@@ -68,15 +68,19 @@ footer {
     min-height: 80vh;
 } */
 
-h1{
+h1 {
     text-align: center;
 }
 
-h1, p {
+h1,
+p {
     text-align: center;
     color: var(--light-color);
 }
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
     color: var(--secondary-color);
 }
 
@@ -126,14 +130,19 @@ a {
         width: 100%;
         padding: 0 10px;
     }
+
     nav ul li {
         float: none;
     }
 }
+
 @media (max-width: 480px) {
-    header, footer {
+
+    header,
+    footer {
         padding: 5px 0;
     }
+
     nav ul li a {
         padding: 10px;
     }
@@ -148,12 +157,15 @@ a {
     padding: 20px;
     margin: 10px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}  
+}
+
 .card h3 {
     margin-top: 0;
 }
+
 .card p {
     color: var(--dark-color);
 }
+
 /* End of custom styles */
 /* End of style.css */
