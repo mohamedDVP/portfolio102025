@@ -8,28 +8,28 @@
             <div class="col-md-6">
                 <?php
                 // Traitement du formulaire
-                    require_once 'includes/db.php'; // On se connecte à la BDD
+                require_once 'includes/db.php'; // On se connecte à la BDD
 
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        $nom = htmlspecialchars($_POST['nom']);
-                        $email = htmlspecialchars($_POST['email']);
-                        $message = htmlspecialchars($_POST['message']);
-                        
-                        try {
-                            $stmt = $pdo->prepare("INSERT INTO messages (nom, email, message) VALUES (:nom, :email, :message)");
-                            $stmt->execute([
-                                'nom' => $nom,
-                                'email' => $email,
-                                'message' => $message
-                            ]);
-                            echo '<div class="alert alert-success">Merci ' . $nom . ', votre message a bien été enregistré !</div>';
-                        } catch (PDOException $e) {
-                            echo '<div class="alert alert-danger">Erreur lors de l\'envoi : ' . $e->getMessage() . '</div>';
-                        }
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $nom = htmlspecialchars($_POST['nom']);
+                    $email = htmlspecialchars($_POST['email']);
+                    $message = htmlspecialchars($_POST['message']);
+
+                    try {
+                        $stmt = $pdo->prepare("INSERT INTO messages (nom, email, message) VALUES (:nom, :email, :message)");
+                        $stmt->execute([
+                            'nom' => $nom,
+                            'email' => $email,
+                            'message' => $message
+                        ]);
+                        echo '<div class="alert alert-success">Merci ' . $nom . ', votre message a bien été enregistré !</div>';
+                    } catch (PDOException $e) {
+                        echo '<div class="alert alert-danger">Erreur lors de l\'envoi : ' . $e->getMessage() . '</div>';
                     }
-                    ?>
+                }
+                ?>
 
-                    <form action="contact.php" method="POST" class="card p-4">
+                <form action="contact.php" method="POST" class="card p-4">
                     <div class="mb-3">
                         <label for="nom" class="form-label">Nom :</label>
                         <input type="text" id="nom" name="nom" class="form-control" required>
