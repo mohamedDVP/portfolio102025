@@ -26,8 +26,10 @@
                         } catch (PDOException $e) {
                             echo '<div class="alert alert-danger">Erreur lors de l\'envoi : ' . $e->getMessage() . '</div>';
                         }
+                    }
+                    ?>
 
-                <form action="contact.php" method="POST" class="card p-4">
+                    <form action="contact.php" method="POST" class="card p-4">
                     <div class="mb-3">
                         <label for="nom" class="form-label">Nom :</label>
                         <input type="text" id="nom" name="nom" class="form-control" required>
