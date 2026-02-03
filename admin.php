@@ -87,6 +87,7 @@ $projets = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php
             if ($_GET['msg'] == 'deleted') echo "Projet supprimé avec succès.";
             if ($_GET['msg'] == 'added') echo "Projet ajouté avec succès.";
+            if ($_GET['msg'] == 'updated') echo "Projet mis à jour avec succès.";
             ?>
         </div>
     <?php endif; ?>
@@ -144,6 +145,7 @@ $projets = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <td><img src="<?php echo $projet['image']; ?>" style="height: 50px; width: 50px; object-fit: cover; border-radius: 4px;"></td>
                                     <td><?php echo $projet['titre']; ?></td>
                                     <td>
+                                        <a href="admin_project_edit.php?id=<?php echo $projet['id']; ?>" class="btn btn-warning btn-sm me-1">Modifier</a>
                                         <a href="admin.php?delete=<?php echo $projet['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce projet ?');">Supprimer</a>
                                     </td>
                                 </tr>
