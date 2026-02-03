@@ -1,8 +1,12 @@
 :root {
-    --primary-color: #2c3e50;    /* Bleu nuit "Midnight Blue" */
-    --accent-color: #e74c3c;     /* Rouge corail pour les actions */
-    --text-color: #333333;       /* Gris foncé pour le texte */
-    --light-bg: #f8f9fa;         /* Gris très clair pour le fond */
+    --primary-color: #2c3e50;
+    /* Bleu nuit "Midnight Blue" */
+    --accent-color: #e74c3c;
+    /* Rouge corail pour les actions */
+    --text-color: #333333;
+    /* Gris foncé pour le texte */
+    --light-bg: #f8f9fa;
+    /* Gris très clair pour le fond */
     --white: #ffffff;
     --border-color: #e0e0e0;
 }
@@ -26,14 +30,15 @@ body {
 /* --- Header & Navigation --- */
 header {
     background-color: var(--primary-color);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Flexbox pour le menu */
+    display: flex;
+    /* Flexbox pour le menu */
     justify-content: center;
 }
 
@@ -48,7 +53,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     color: var(--white);
 }
 
@@ -59,11 +64,14 @@ nav ul li a.active {
 
 /* --- Main Content --- */
 main {
-    flex: 1; /* Pousse le footer vers le bas */
+    flex: 1;
+    /* Pousse le footer vers le bas */
     padding-bottom: 40px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: var(--primary-color);
     margin-bottom: 20px;
 }
@@ -100,9 +108,10 @@ h1 {
     background-color: var(--white);
     border: none;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s, box-shadow 0.2s;
-    height: 100%; /* Cartes de même hauteur */
+    height: 100%;
+    /* Cartes de même hauteur */
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -110,7 +119,7 @@ h1 {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
@@ -127,7 +136,8 @@ h1 {
 .card p {
     padding: 0 15px;
     color: #666;
-    flex-grow: 1; /* Remplis l'espace pour aligner le bouton en bas */
+    flex-grow: 1;
+    /* Remplis l'espace pour aligner le bouton en bas */
 }
 
 /* Petit hack pour le bouton dans la card */
@@ -146,7 +156,8 @@ h1 {
     color: var(--white);
     padding: 10px 25px;
     border: none;
-    border-radius: 50px; /* Boutons arrondis */
+    border-radius: 50px;
+    /* Boutons arrondis */
     cursor: pointer;
     text-decoration: none;
     font-weight: 600;
@@ -154,7 +165,8 @@ h1 {
 }
 
 .button-primary:hover {
-    background-color: #c0392b; /* Rouge un peu plus foncé */
+    background-color: #c0392b;
+    /* Rouge un peu plus foncé */
     color: var(--white);
 }
 
@@ -177,7 +189,7 @@ h1 {
 /* --- Footer --- */
 footer {
     background-color: var(--primary-color);
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
     text-align: center;
     padding: 20px 0;
     margin-top: auto;
