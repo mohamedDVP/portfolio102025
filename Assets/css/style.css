@@ -1,171 +1,191 @@
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --success-color: #28a745;
-    --info-color: #17a2b8;
-    --warning-color: #ffc107;
-    --danger-color: #dc3545;
-    --light-color: #f8f9fa;
-    --dark-color: #343a40;
+    --primary-color: #2c3e50;    /* Bleu nuit "Midnight Blue" */
+    --accent-color: #e74c3c;     /* Rouge corail pour les actions */
+    --text-color: #333333;       /* Gris foncé pour le texte */
+    --light-bg: #f8f9fa;         /* Gris très clair pour le fond */
+    --white: #ffffff;
+    --border-color: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--light-color);
-    color: var(--dark-color);
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+/* --- Header & Navigation --- */
 header {
-    background-color: var(--success-color);
-    color: white;
-    padding: 10px 0;
-    text-align: center;
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: var(--success-color);
-}
-
-nav ul li {
-    float: left;
+    display: flex; /* Flexbox pour le menu */
+    justify-content: center;
 }
 
 nav ul li a {
     display: block;
-    color: var(--light-color);
+    color: var(--white);
     text-align: center;
-    padding: 14px 16px;
+    padding: 15px 25px;
     text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
 }
 
 nav ul li a:hover {
-    background-color: var(--dark-color);
+    background-color: rgba(255,255,255,0.1);
+    color: var(--white);
 }
 
 nav ul li a.active {
-    background-color: var(--danger-color);
-    font-weight: bold;
+    background-color: var(--accent-color);
+    color: var(--white);
 }
 
-footer {
-    background-color: var(--success-color);
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+/* --- Main Content --- */
+main {
+    flex: 1; /* Pousse le footer vers le bas */
+    padding-bottom: 40px;
 }
 
-/* main {
-    padding: 20px;
-    min-height: 80vh;
-} */
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
 
 h1 {
+    font-weight: 700;
+}
+
+/* --- Hero Section (Accueil) --- */
+.hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('../images/v627-aew-01-technologybackground.webp');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 100px 20px;
     text-align: center;
+    margin-bottom: 40px;
 }
 
-h1,
-p {
-    text-align: center;
-    color: var(--light-color);
+.hero h1 {
+    color: var(--white);
+    font-size: 3em;
+    margin-bottom: 10px;
 }
 
-h1,
-h2,
-h3 {
-    color: var(--secondary-color);
+.hero p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
 }
 
-a {
-    color: var(--light-color);
-    text-decoration: none;
-    border-radius: ;
-}
-
-/* a:hover {
-    text-decoration: underline;
-} */
-
-.container-fluid {
-    background-image: url('../images/v627-aew-01-technologybackground.webp');
-}
-
-.button-primary {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px 20px;
+/* --- Cards (Projets, etc.) --- */
+.card {
+    background-color: var(--white);
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%; /* Cartes de même hauteur */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card h3 {
+    margin-top: 15px;
+    padding: 0 15px;
+}
+
+.card p {
+    padding: 0 15px;
+    color: #666;
+    flex-grow: 1; /* Remplis l'espace pour aligner le bouton en bas */
+}
+
+/* Petit hack pour le bouton dans la card */
+.card .card-footer-custom {
+    padding: 15px;
+    background: none;
+    border-top: none;
+    text-align: center;
+}
+
+
+/* --- Buttons --- */
+.button-primary {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 50px; /* Boutons arrondis */
     cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
 }
 
 .button-primary:hover {
-    background-color: var(--dark-color);
+    background-color: #c0392b; /* Rouge un peu plus foncé */
+    color: var(--white);
 }
 
+/* --- Forms --- */
 .form-control {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid var(--secondary-color);
-    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: inherit;
 }
 
 .form-control:focus {
     border-color: var(--primary-color);
     outline: none;
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        width: 100%;
-        padding: 0 10px;
-    }
-
-    nav ul li {
-        float: none;
-    }
+/* --- Footer --- */
+footer {
+    background-color: var(--primary-color);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
 }
 
-@media (max-width: 480px) {
-
-    header,
-    footer {
-        padding: 5px 0;
-    }
-
-    nav ul li a {
-        padding: 10px;
-    }
+/* --- Utilities --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-
-/* Additional custom styles can be added below */
-/* Example: */
-.card {
-    background-color: white;
-    border: 1px solid var(--secondary-color);
-    border-radius: 5px;
-    padding: 20px;
-    margin: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.card h3 {
-    margin-top: 0;
-}
-
-.card p {
-    color: var(--dark-color);
-}
-
-/* End of custom styles */
-/* End of style.css */
