@@ -1,2 +1,2 @@
-includes/db.php
-init_db_mysql.php
+includes/config.php
+.DS_Store
