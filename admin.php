@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $titre = htmlspecialchars($_POST['titre']);
     $description = htmlspecialchars($_POST['description']);
     $lien = htmlspecialchars($_POST['lien']);
-    
+
     $image_path = "";
 
     // Gestion de l'upload d'image
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($filesize < 5 * 1024 * 1024) {
                 $new_filename = uniqid() . "." . $ext;
                 $upload_dir = "Assets/images/projects/";
-                
+
                 // Créer le dossier s'il n'existe pas
                 if (!is_dir($upload_dir)) {
                     mkdir($upload_dir, 0755, true);
