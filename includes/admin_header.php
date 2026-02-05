@@ -15,6 +15,7 @@
             <span class="navbar-brand mb-0 h1">Admin Panel</span>
             <div>
                 <a href="admin.php" class="btn btn-outline-light btn-sm me-2">Projets</a>
+                <a href="admin_skills.php" class="btn btn-outline-light btn-sm me-2">Compétences</a>
                 <a href="admin_messages.php" class="btn btn-outline-light btn-sm me-2">Messages</a>
                 <span class="text-white me-3">|</span>
                 <span class="text-white me-3">Bienvenue, <?php echo $_SESSION['username']; ?></span>

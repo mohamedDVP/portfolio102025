@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $titre = htmlspecialchars($_POST['titre']);
     $description = htmlspecialchars($_POST['description']);
     $lien = htmlspecialchars($_POST['lien']);
-    
+
     // Par défaut, on garde l'ancienne image
     $image_path = $projet['image'];
 
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($filesize < 5 * 1024 * 1024) {
                 $new_filename = uniqid() . "." . $ext;
                 $upload_dir = "Assets/images/projects/";
-                
+
                 if (!is_dir($upload_dir)) {
                     mkdir($upload_dir, 0755, true);
                 }
@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="col-md-8">
             <div class="card p-4">
                 <h3>Modifier le projet</h3>
-                
+
                 <?php if (isset($error)): ?>
                     <div class="alert alert-danger"><?php echo $error; ?></div>
                 <?php endif; ?>
@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label class="form-label">Description</label>
                         <textarea name="description" class="form-control" rows="5" required><?php echo htmlspecialchars($projet['description']); ?></textarea>
                     </div>
-                    
+
                     <div class="row mb-3">
                         <div class="col-md-4">
                             <label class="form-label">Image actuelle</label>
@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label class="form-label">Lien du projet</label>
                         <input type="text" name="lien" class="form-control" value="<?php echo htmlspecialchars($projet['lien']); ?>" placeholder="#">
                     </div>
-                    
+
                     <div class="d-flex justify-content-between">
                         <a href="admin.php" class="btn btn-secondary">Annuler</a>
                         <button type="submit" class="button-primary">Enregistrer les modifications</button>

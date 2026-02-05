@@ -19,11 +19,24 @@
                     </p>
 
                     <h4 class="mt-4">Mes Compétences</h4>
-                    <ul>
-                        <li>HTML5 / CSS3</li>
-                        <li>PHP / MySQL (En cours d'apprentissage)</li>
-                        <li>Git / GitHub</li>
-                    </ul>
+
+                    <?php if (count($skills) > 0): ?>
+                        <div class="mt-3">
+                            <?php foreach ($skills as $skill): ?>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between">
+                                        <strong><?php echo htmlspecialchars($skill['name']); ?></strong>
+                                        <span><?php echo $skill['level']; ?>%</span>
+                                    </div>
+                                    <div class="progress" style="height: 10px;">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: <?php echo $skill['level']; ?>%;"></div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php else: ?>
+                        <p>Aucune compétence listée pour le moment.</p>
+                    <?php endif; ?>
 
                     <div class="mt-4 text-center">
                         <a href="contact.php" class="button-primary">Me contacter</a>
